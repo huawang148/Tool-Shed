@@ -1,6 +1,5 @@
 #!/usr/bin/python
 """
-Cross Device CPS Report - generate detail info for each conversion
 Author: Hua Wang
 """
 import sys
