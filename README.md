@@ -14,7 +14,7 @@ Remember, data is passed as string and read line by line into python, so we need
    
 In the following example, I am reading hive complex types (array of structs), so remove {} and [] to make all columns a single string.    
 
-{% highlight python %}
+```python 
 import sys
 from operator import itemgetter
 import pytz
@@ -25,13 +25,13 @@ def stripLine(line):
     line = line.strip()
     line = str(line).replace("[", '').replace(']', '').replace('{', '').replace('},', ';').replace('}', '').replace('"','')
     return line
-{% endhighlight %}
+```
 
 Then add additional functions you need for your analysis.   
 
 We can take eaily take advantage of the rich modules in Python that hive lacks. 
 
-{% highlight python %}
+```python 
 def buildListOfDict (some_string):
     """Take string that was array of structs in Hive and build into list of dict in python"""
     arr = []
@@ -48,11 +48,11 @@ def convert_to_date (timestamp_ms):
     ny_tz = pytz.timezone('America/New_York')
     ny_dt = ny_tz.normalize(utc_dt.astimezone(ny_tz)).strftime('%Y-%m-%d %H:%M:%S')
     return ny_dt
-{% endhighlight %}
+```
 
 Finally, we run the stdin for each line to transform the data and return the output back as string
 
-{% highlight python %}
+```python 
 for line in sys.stdin:
     strip_line = stripLine(line)
 
@@ -78,7 +78,7 @@ for line in sys.stdin:
                     else:
                         del path
 
-{% endhighlight %}
+```
 
 If packages like NumPy, Pandas are installed, sophisticated data mining like affinity analysis, segmentation, 
 recommendation engine can be run, that would be otherwise difficult (if not impossible) to do in Hive with HQL.
