@@ -27,8 +27,6 @@ def stripLine(line):
     return line
 {% endhighlight %}
 
-<!-- more -->
-
 Then add additional functions you need for your analysis.   
 
 We can take eaily take advantage of the rich modules in Python that hive lacks. 
