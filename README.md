@@ -1,4 +1,4 @@
-# hive-python-streaming
+# Combine Hive and Python for data analysis
 Instead of Java UDF, Python can be used to Hadoop/Hive streaming data
 
 Hive is a popular data warehouse built on top on hadoop that supports SQL like query instead of writing mapreduce jobs. Although its SQL like language, called HQL makes hadoop more friendly to use for analysts and data scientists, SQL has language as a whole has many limitations, especially for more complex data transformation and analysis. Just like other SQL based databases, Hive supports adding User define functions and is mostly Java based. I found UDF is useful and convenient for solving some function like problems; for example, implementation Havensine distance function given 2 pairs of lat lons; so function can be directly called instead of writing crazy SQL everytime. 
